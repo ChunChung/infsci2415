@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>homework2</title>
+		<meta charset="utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+		<script src="lib/jquery.min.js"></script>
+		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+		<script type='text/javascript' src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"> </script>
+		<style>
+			.node {
+				stroke: #fff;
+				stroke-width: 1.5px;
+			}
+
+			.link {
+				stroke: #999;
+				stroke-opacity: .6;
+			}
+			h3 {
+				text-align:center;  
+				font-size: 14px;
+				font-family: "Helvetica";
+			}
+
+			.node text {
+				font: 10px helvetica;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Task1<span class="sr-only">(current)</span></a></li>
+					</ul>
+				</div>
+			</div>
+			</nav>
+			<div class="canvas" align="center"></div>
+
+			<script>
+				var states, svg, loading=1;
+
+				var width = 1200,
+				height = 800;
+
+				d3.json("data/state-data-by-year-2014.json", function(data) { 
+					states = data;
+					if(!--loading) drawGraph();
+				});
+
+
+				var colorbar = [
+				"FF0000",
+				"FF1000",
+				"FF2000",
+				"FF3000",
+				"FF4000",
+				"FF5000",
+				"FF6000",
+				"FF7000",
+				"FF8000",
+				"FF9000",
+				"FFA000",
+				"FFB000",
+				"FFC000",
+				"FFD000",
+				"FFE000",
+				"FFF000",
+				"FFFF00", 
+				"F0FF00", 
+				"E0FF00",
+				"D0FF00",
+				"C0FF00",
+				"B0FF00",
+				"A0FF00",
+				"90FF00",
+				"80FF00",
+				"70FF00",
+				"60FF00",
+				"50FF00",
+				"40FF00",
+				"30FF00",
+				"20FF00",
+				"10FF00"];
+
+				function drawGraph() {
+					svg = d3.select(".canvas").append("svg")
+					.attr("width", width)                   
+					.attr("height", height)                 
+					.attr("id", "svgcanvas");               
+
+					console.log(states);
+
+					var rowNumber = 5,
+						colNumber = Math.ceil(states.length/rowNumber);					
+					
+
+					var scaleX = d3.scale.linear()
+					    .domain([0, rowNumber-1])
+						.range([40, width-200]);
+
+					var scaleY = d3.scale.linear()
+						.domain([0, colNumber-1])
+						.range([0, height-100]);
+
+
+					var min_income=999999, max_income=0;
+					for(var i=0;i<states.length;i++) {
+						var row = i%rowNumber;
+						var col = Math.ceil((i+1)/rowNumber);
+						states[i].x = scaleX(row);
+						states[i].y = scaleY(col);
+						if(min_income > states[i].income) {
+							min_income = states[i].income;
+						}
+
+						if(max_income < states[i].income) {
+							max_income = states[i].income;
+						}
+					}
+					var glyph =svg.selectAll(".vertex")
+						.data(states)
+						.enter()
+						.append("g")
+						.attr("id", function(d) {
+							return 'u' + d.state})
+						.attr("class", "vertex")
+						.style("opacity", "1");
+						glyph.append("circle")
+						.attr("cx", function(d) {return d.x;})
+						.attr("cy", function(d) {return d.y;})
+						.attr("r", 30)
+						.style("fill", function(d) {
+
+							console.log(d.income + ", " + min_income + ", " + max_income);
+							return colorbar[Math.max(0, Math.floor(((d.income - min_income)/(max_income-min_income) )* colorbar.length) -1)];
+						});
+
+
+						//1<text x="20" y="20" font-family="sans-serif" font-size="20px" fill="red">Hello!</text>
+						glyph.append("text")
+						.attr("x", function(d) {return d.x-40})
+						.attr("y", function(d) {return d.y+20})
+						.text(function(d) {return d.state +", income: $"+ d.income});
+
+
+
+
+
+
+
+
+				}
+
+
+				//http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+				function componentToHex(c) {
+					var hex = c.toString(16);
+					return hex.length == 1 ? "0" + hex : hex;
+				}
+
+				function rgbToHex(r, g, b) {
+					return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+				}
+
+
+			</script>
+		</div>
+	</body>
+	<!--
+	<script>
+		<script type="text/javascript" src="js/glyph.js"></script>
+	</script>
+	-->
+</html>
+
