@@ -11,6 +11,53 @@
 		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 		<script type='text/javascript' src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"> </script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["wordtree"]});
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+		  ['economy is important to improve financial stability'],
+		  ['economy is important to reduce risks and present challenges'],
+		  ['economy is important to have wealthy country'],
+		  ['economy is important for planing the future'],
+		  ['economy is important as it ensures happiness and satisfaction of its people'],
+		  
+			['economy key influencing factor is Gross Domestic Product'],
+			['economy key influencing factor is education'],
+			['economy key influencing factor is poverty'],
+			['economy key influencing factor is income versus expenses'],
+			
+			['economy in USA have shown stable growth'],
+			['economy in USA is number 1 in the world'],
+			['economy in USA growth has started to slow down opposite to emerging countries'],
+			['economy in USA reduced poverty'],
+			['economy in USA reduced unemployment'],
+			
+			['economy strength = better edducated and more productive workforce'],
+			['economy strength = global outlook '],
+			['economy strength = population - successfully utilized or not'],
+			
+			
+			['economy global outlook depends on countrys macroeconomic policies'],
+			['economy global outlook key factor is Gross Domestic Product'],
+          ]
+        );
+
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            word: 'economy'
+          }
+        };
+
+        var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+	</script>
 		<style>
 			.node {
 				stroke: #fff;
@@ -21,6 +68,7 @@
 				stroke: #999;
 				stroke-opacity: .6;
 			}
+
 			h3 {
 				text-align:center;  
 				font-size: 14px;
@@ -31,151 +79,51 @@
 				font: 10px helvetica;
 			}
 
-
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="headcontainer">
 			<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Task1<span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="index.html">Introduction<span class="sr-only">(current)</span></a></li>
+						<li><a href="index.html">Map View</a></li>
+						<li><a href="index.html">Details</a></li>
 					</ul>
 				</div>
 			</div>
 			</nav>
+		</div>
+		<div class="container">
 			<div class="canvas" align="center"></div>
 
-			<script>
-				var states, svg, loading=1;
-
-				var width = 1200,
-				height = 800;
-
-				d3.json("data/state-data-by-year-2014.json", function(data) { 
-					states = data;
-					if(!--loading) drawGraph();
-				});
-
-
-				var colorbar = [
-				"FF0000",
-				"FF1000",
-				"FF2000",
-				"FF3000",
-				"FF4000",
-				"FF5000",
-				"FF6000",
-				"FF7000",
-				"FF8000",
-				"FF9000",
-				"FFA000",
-				"FFB000",
-				"FFC000",
-				"FFD000",
-				"FFE000",
-				"FFF000",
-				"FFFF00", 
-				"F0FF00", 
-				"E0FF00",
-				"D0FF00",
-				"C0FF00",
-				"B0FF00",
-				"A0FF00",
-				"90FF00",
-				"80FF00",
-				"70FF00",
-				"60FF00",
-				"50FF00",
-				"40FF00",
-				"30FF00",
-				"20FF00",
-				"10FF00"];
-
-				function drawGraph() {
-					svg = d3.select(".canvas").append("svg")
-					.attr("width", width)                   
-					.attr("height", height)                 
-					.attr("id", "svgcanvas");               
-
-					console.log(states);
-
-					var rowNumber = 5,
-						colNumber = Math.ceil(states.length/rowNumber);					
-					
-
-					var scaleX = d3.scale.linear()
-					    .domain([0, rowNumber-1])
-						.range([40, width-200]);
-
-					var scaleY = d3.scale.linear()
-						.domain([0, colNumber-1])
-						.range([0, height-100]);
-
-
-					var min_income=999999, max_income=0;
-					for(var i=0;i<states.length;i++) {
-						var row = i%rowNumber;
-						var col = Math.ceil((i+1)/rowNumber);
-						states[i].x = scaleX(row);
-						states[i].y = scaleY(col);
-						if(min_income > states[i].income) {
-							min_income = states[i].income;
-						}
-
-						if(max_income < states[i].income) {
-							max_income = states[i].income;
-						}
-					}
-					var glyph =svg.selectAll(".vertex")
-						.data(states)
-						.enter()
-						.append("g")
-						.attr("id", function(d) {
-							return 'u' + d.state})
-						.attr("class", "vertex")
-						.style("opacity", "1");
-						glyph.append("circle")
-						.attr("cx", function(d) {return d.x;})
-						.attr("cy", function(d) {return d.y;})
-						.attr("r", 30)
-						.style("fill", function(d) {
-
-							console.log(d.income + ", " + min_income + ", " + max_income);
-							return colorbar[Math.max(0, Math.floor(((d.income - min_income)/(max_income-min_income) )* colorbar.length) -1)];
-						});
-
-
-						//1<text x="20" y="20" font-family="sans-serif" font-size="20px" fill="red">Hello!</text>
-						glyph.append("text")
-						.attr("x", function(d) {return d.x-40})
-						.attr("y", function(d) {return d.y+20})
-						.text(function(d) {return d.state +", income: $"+ d.income});
-
-
-
-
-
-
-
-
-				}
-
-
-				//http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
-				function componentToHex(c) {
-					var hex = c.toString(16);
-					return hex.length == 1 ? "0" + hex : hex;
-				}
-
-				function rgbToHex(r, g, b) {
-					return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-				}
-
-
-			</script>
 		</div>
+		<div class="container-fluid" align="center">
+			<h1>Welcome to our Analysis of Economy Visualizations</h1>
+		</div>
+		<table border="3" align="center">
+			<tr>
+				<td  style="widtd:5%;" size="25em">OECD - develop a better world</td>
+				<td  style="widtd:20%;">Start witd tde economy</td>
+				<td style="widtd:20%;">Plan tde future </td>
+			</tr>
+
+			<tr>
+				<td  style="widtd:5%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/Y2QYeC4mQRM" frameborder="0" allowfullscreen></iframe></td>
+				<td  style="widtd:20%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/0AdQZYk6vD0" frameborder="0" allowfullscreen></iframe></td>
+				<td  style="widtd:20%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/fnIl212tBPk" frameborder="0" allowfullscreen></iframe></td>
+			</tr>
+
+			<tr>
+				<td colspan="3"> <div id="wordtree_basic" style="width: 900px; height: 500px;"></div></td>
+			</tr>
+
+
+		</table>
+
+
+
 	</body>
 	<!--
 	<script>
