@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["wordtree"]});
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+		  ['economy is important to improve financial stability'],
+		  ['economy is important to reduce risks and present challenges'],
+		  ['economy is important to have wealthy country'],
+		  ['economy is important for planing the future'],
+		  ['economy is important as it ensures happiness and satisfaction of its people'],
+		  
+			['economy key influencing factor is Gross Domestic Product'],
+			['economy key influencing factor is education'],
+			['economy key influencing factor is poverty'],
+			['economy key influencing factor is income versus expenses'],
+			
+			['economy in USA have shown stable growth'],
+			['economy in USA is number 1 in the world'],
+			['economy in USA growth has started to slow down opposite to emerging countries'],
+			['economy in USA reduced poverty'],
+			['economy in USA reduced unemployment'],
+			
+			['economy strength = better edducated and more productive workforce'],
+			['economy strength = global outlook '],
+			['economy strength = population - successfully utilized or not'],
+			
+			
+			['economy global outlook depends on countrys macroeconomic policies'],
+			['economy global outlook key factor is Gross Domestic Product'],
+          ]
+        );
+
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            word: 'economy'
+          }
+        };
+
+        var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<title>Title of tde document</title>
+</head>
+
+<body>
+Welcome to our Analysis of Economy Visualizations
+<table border="3" class="center">
+
+<tr>
+	<td  style="widtd:5%;" size="25em">OECD - develop a better world</td>
+	<td  style="widtd:20%;">Start witd tde economy</td>
+	<td style="widtd:20%;">Plan tde future </td>
+</tr>
+
+<tr>
+	<td  style="widtd:5%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/Y2QYeC4mQRM" frameborder="0" allowfullscreen></iframe></td>
+	<td  style="widtd:20%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/0AdQZYk6vD0" frameborder="0" allowfullscreen></iframe></td>
+	<td  style="widtd:20%;"><iframe widtd="400" height="265" src="https://www.youtube.com/embed/fnIl212tBPk" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+
+<tr>
+	<td colspan="3"> <div id="wordtree_basic" style="width: 900px; height: 500px;"></div></td>
+</tr>
+
+
+</table>
+
+
+
+</body>
+
+</html> 
