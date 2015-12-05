@@ -1,1 +1,63 @@
+<!DOCTYPE html>
 
+ <html>
+	<head>
+		<title>Parallel Coordinates</title>
+<!--		=====================================================================   -->
+		<link rel="stylesheet" type="text/css" href="css/d3.parcoords.css">	
+		<link rel="stylesheet" type="text/css" href="css/parallelCoordinates.css">
+<!--		=====================================================================   -->
+		<script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
+		<script src="./js/d3.min.js"></script>
+		<script src="./js/d3.parcoords.js"></script>
+		<script src="./js/divgrid.js"></script>
+<!--		=====================================================================   -->
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div id="parallel" class="parallel">  
+				<div id="example" class="parcoords" style="height:800px; width:auto"></div>
+				<div id="grid"></div>						
+				<script id="brushing" type='text/javascript'>
+					var color = d3.scale.category20(function(d){return d.State});
+					var parcoords = d3.parcoords()("#example")
+						.color('steelblue')
+						.alpha(0.4);
+		
+					// load csv file and create the chart
+					d3.csv('./csv/state.csv', function(data) {
+						parcoords
+							.data(data)
+							.render()
+							.brushMode("1D-axes");  // enable brushing
+
+						// create data table, row hover highlighting
+						var grid = d3.divgrid();
+						//temp=11;
+						d3.select("#grid")
+							.datum(data.slice(0,550)) // make sure all the data points can be included in the chart
+							.call(grid)
+							.selectAll(".row")
+							.on({
+								"mouseover": function(d) { parcoords.highlight([d]); },
+								"mouseout": parcoords.unhighlight
+							});
+
+						// update data table on brush event
+						parcoords.on("brush", function(d) {
+							d3.select("#grid")
+								.datum(d.slice(0,550)) // make sure all the data points can be included in the chart
+								.call(grid)
+								.selectAll(".row")
+								.on({
+									"mouseover": function(d) { parcoords.highlight([d]); },
+									"mouseout": parcoords.unhighlight
+								});
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
