@@ -1,17 +1,20 @@
-var w = 1280,
+var w = 1080,
 	h = 800,
 	state;
 
-var projection = d3.geo.albersUsa().scale(1280).translate([w/2, h/2.5]);
+var projection = d3.geo.albersUsa().scale(1080).translate([w/2, h/2.5]);
 var path = d3.geo.path().projection(projection);
 
 var svg = d3.select("#glyph").append("svg")
 .attr("width", w)
-.attr("height", h);
+.attr("height", h)
+.attr("id", "mainsvg");
 
-var g = svg.append("g").attr("id", "states");
+
 
 var vertex_color = d3.interpolateHsl("#FF0000", "#00FF00");
+
+var g = svg.append("g").attr("id", "states");
 
 var map_explorer = queue()
 	.defer(d3.json, "data/states_usa.topo.json")
@@ -109,6 +112,7 @@ explorer.update = function(_year) {
 			.attr("cx", function(d) {return path.centroid(d)[0]})
 			.attr("cy", function(d) {return path.centroid(d)[1]})
 			.attr("r", function(d) {return 0.7*radius(dataset[_year][d.properties.name]["population"]); })
+			.style('fill-opacity', .9)
 			.style("fill", function(d) {
 				    return vertex_color((dataset[_year][d.properties.name]["GDP"] - year_range[_year]["min_GDP"])/(year_range[_year]["max_GDP"]-year_range[_year]["min_GDP"]));
 			});
@@ -187,4 +191,72 @@ function zoom(xyz) {
 		.attr("d", path.pointRadius(20.0 / xyz[2]));
 }
 
+function drawcolorbar() {
+			var _line = d3.svg.line()
+			    .interpolate("basis");
+
+
+			var lineFunction = d3.svg.line()                 
+			.x(function(d) { console.log(d.x); return d.x; })
+			.y(function(d) { return d.y; })                  
+			.interpolate("linear");                          
+
+			var colorbar_g = d3.select("#mainsvg").append("g")
+				.attr("transform", "translate(-200,0)");
+
+			colorbar_g                                  
+			.selectAll("path")
+			.data(linepath(sample(_line([[300,0], [500,0]]), 1)))   
+			.enter()
+			.append("path")                                
+			.style("fill", function(d) { return vertex_color(d.t); })     
+			.style("stroke", function(d) { return vertex_color(d.t); })   
+			.style("stroke-width", "50")                           
+			.attr("d", function(d) { return lineFunction(d.line)});
+			                                                       
+			colorbar_g                                                    
+			.append("text")                                        
+			.attr("id", "lower_income_bar")                        
+			.attr("fill", "red")                                   
+			.attr("x", 200)                                        
+			.attr("y", 20)                                         
+			.text("Lower GDP");                                 
+			                                                       
+			colorbar_g                                                    
+			.append("text")                                        
+			.attr("id", "higher_income_bar")                       
+			.attr("fill", "#00FF00")                               
+			.attr("x", 510)                                        
+			.attr("y", 20)                                         
+			.text("Higher GDP");
+
+			function sample(d, precision) {                                    
+				var path = document.createElementNS(d3.ns.prefix.svg, "path"); 
+
+				path.setAttribute("d", d);                                     
+
+				var n = path.getTotalLength(), t = [0], i = 0, dt = precision; 
+				while ((i += dt) < n) t.push(i);                               
+				t.push(n);                                                     
+
+				return t.map(function(t) {                                     
+					var p = path.getPointAtLength(t), a=[];                    
+					a.point = {'x':p.x, 'y':p.y};                              
+					a.t = t / n;                                               
+					return a;                                                  
+				});                                                            
+			}                                                                  
+
+
+			function linepath(d) {
+				var result = [];
+				for(var i=1; i< d.length; i++) {
+					result.push({'t':d[i-1].t, 'line':[d[i-1].point, d[i].point]});
+				}
+				return result;
+
+			}
+
+
+}
 

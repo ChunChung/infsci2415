@@ -26,13 +26,21 @@
 	<body>		
 		<div class="container-fluid">
 			<div class="title">U.S. Map View</div>			
-			<div class="block" id="glyph" align="center">
-				<div class="slidingbar" style="display:inline-block;text-align:center;">
+			<div class="row">
+				<div class="col-md-4" >
+					<img src="img/colorbar.png" width="90%" style="width:auto; margin: -100 0 0 0; auto;"></img>
+					<img src="img/glyph.png"></img>
+				</div>
+				<div class="col-md-4 slidingbar">
 					<form>
 						<h3> Select year <input type="range" style="width:200; margin: 0 auto;" id="thersholdSlider" name="points" value ="2014" min="2005" max="2014" onchange="select_year(this.value)"> <div id="console-event"></div>
 						</h3>
 					</form>
 				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+			<div class="block" id="glyph" align="center">
 			</div>					
 			<div class="block">
 				
