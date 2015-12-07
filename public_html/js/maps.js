@@ -1,11 +1,11 @@
-var w = 1024,
-	h = 768,
+var w = 1280,
+	h = 800,
 	state;
 
-var projection = d3.geo.albersUsa().scale(1280).translate([w/2, h/2]);
+var projection = d3.geo.albersUsa().scale(1280).translate([w/2, h/2.5]);
 var path = d3.geo.path().projection(projection);
 
-var svg = d3.select("#canvas").append("svg")
+var svg = d3.select("#glyph").append("svg")
 .attr("width", w)
 .attr("height", h);
 
@@ -161,7 +161,7 @@ function state_clicked(d) {
 
 	zoom(xyz);
 	}else {
-		    var xyz = [w / 2, h / 2, 1];
+		    var xyz = [w / 2, h / 2.5, 1];
 			    country = null;
 				   zoom(xyz);
 	 }
