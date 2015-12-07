@@ -1,8 +1,8 @@
-var w = 1080,
+var w = 1440,
 	h = 800,
 	state;
 
-var projection = d3.geo.albersUsa().scale(1080).translate([w/2, h/2.5]);
+var projection = d3.geo.albersUsa().scale(1440).translate([w/2, h/2.5]);
 var path = d3.geo.path().projection(projection);
 
 var svg = d3.select("#glyph").append("svg")
