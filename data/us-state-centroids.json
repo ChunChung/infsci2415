@@ -49,6 +49,5 @@
 {"type":"Feature","id":"53","geometry":{"type":"Point","coordinates":[-121.624501,47.341728]},"properties":{"name":"Washington","population":5894121}},
 {"type":"Feature","id":"54","geometry":{"type":"Point","coordinates":[-80.820221,38.767195]},"properties":{"name":"West Virginia","population":1808344}},
 {"type":"Feature","id":"55","geometry":{"type":"Point","coordinates":[-89.001006,43.728544]},"properties":{"name":"Wisconsin","population":5363675}},
-{"type":"Feature","id":"56","geometry":{"type":"Point","coordinates":[-107.008835,42.675762]},"properties":{"name":"Wyoming","population":493782}},
-{"type":"Feature","id":"72","geometry":{"type":"Point","coordinates":[-66.58765,18.19958]},"properties":{"code":"PR","name":"Puerto Rico","population":3808610}}
+{"type":"Feature","id":"56","geometry":{"type":"Point","coordinates":[-107.008835,42.675762]},"properties":{"name":"Wyoming","population":493782}}
 ]}
