@@ -27,6 +27,14 @@
 			<div class="title">Map View</div>
 			
 			<div class="block" id="glyph" align="center">
+				<div class="slidingbar" style="display:inline-block;text-align:center;">
+					<form>
+						<h3> Select year <input type="range" style="width:200; margin: 0 auto;" id="thersholdSlider" name="points" value ="2014" min="2005" max="2014" onchange="select_year(this.value)"> <div id="console-event"></div>
+						</h3>
+					</form>
+				</div>
+			</div>
+
 				
 				
 				
@@ -94,5 +102,17 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/maps.js"></script>
+		<script>
+		
+			$('#console-event').html(2014);
+
+			function select_year(thresh) {
+				$('#console-event').html(thresh);
+
+				explorer.update(thresh);
+				
+			}
+
+		</script>
 	</body>
 </html>

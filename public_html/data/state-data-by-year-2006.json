@@ -6,7 +6,8 @@
     "median-house-value ($, no mortgage)":87300,
     "median-house-value ($)":87300,
     "population":4482152,
-    "poverty-population":742064
+    "poverty-population":742064,
+    "pce":25692
   },
   {
     "state":"Alaska",
@@ -15,7 +16,8 @@
     "median-house-value ($, no mortgage)":170500,
     "median-house-value ($)":170500,
     "population":651997,
-    "poverty-population":70919
+    "poverty-population":70919,
+    "pce":37647
   },
   {
     "state":"Arizona",
@@ -24,7 +26,8 @@
     "median-house-value ($, no mortgage)":165600,
     "median-house-value ($)":165600,
     "population":6052150,
-    "poverty-population":857349
+    "poverty-population":857349,
+    "pce":29771
   },
   {
     "state":"Arkansas",
@@ -33,7 +36,8 @@
     "median-house-value ($, no mortgage)":80200,
     "median-house-value ($)":80200,
     "population":2729090,
-    "poverty-population":471155
+    "poverty-population":471155,
+    "pce":24631
   },
   {
     "state":"California",
@@ -42,7 +46,8 @@
     "median-house-value ($, no mortgage)":460600,
     "median-house-value ($)":460600,
     "population":35675356,
-    "poverty-population":4690140
+    "poverty-population":4690140,
+    "pce":32796
   },
   {
     "state":"Colorado",
@@ -51,7 +56,8 @@
     "median-house-value ($, no mortgage)":208100,
     "median-house-value ($)":208100,
     "population":4653251,
-    "poverty-population":556153
+    "poverty-population":556153,
+    "pce":33946
   },
   {
     "state":"Connecticut",
@@ -60,7 +66,8 @@
     "median-house-value ($, no mortgage)":266400,
     "median-house-value ($)":266400,
     "population":3393432,
-    "poverty-population":280108
+    "poverty-population":280108,
+    "pce":39210
   },
   {
     "state":"Delaware",
@@ -69,7 +76,8 @@
     "median-house-value ($, no mortgage)":189600,
     "median-house-value ($)":189600,
     "population":828673,
-    "poverty-population":91962
+    "poverty-population":91962,
+    "pce":34495
   },
   {
     "state":"District of Columbia",
@@ -78,7 +86,8 @@
     "median-house-value ($, no mortgage)":379600,
     "median-house-value ($)":379600,
     "population":551161,
-    "poverty-population":108100
+    "poverty-population":108100,
+    "pce":44763
   },
   {
     "state":"Florida",
@@ -87,7 +96,8 @@
     "median-house-value ($, no mortgage)":183100,
     "median-house-value ($)":183100,
     "population":17686295,
-    "poverty-population":2226587
+    "poverty-population":2226587,
+    "pce":31153
   },
   {
     "state":"Georgia",
@@ -96,7 +106,8 @@
     "median-house-value ($, no mortgage)":119900,
     "median-house-value ($)":119900,
     "population":9082715,
-    "poverty-population":1333524
+    "poverty-population":1333524,
+    "pce":28234
   },
   {
     "state":"Hawaii",
@@ -105,7 +116,8 @@
     "median-house-value ($, no mortgage)":515700,
     "median-house-value ($)":515700,
     "population":1252117,
-    "poverty-population":116147
+    "poverty-population":116147,
+    "pce":33429
   },
   {
     "state":"Idaho",
@@ -114,7 +126,8 @@
     "median-house-value ($, no mortgage)":139900,
     "median-house-value ($)":139900,
     "population":1431508,
-    "poverty-population":180177
+    "poverty-population":180177,
+    "pce":27438
   },
   {
     "state":"Illinois",
@@ -123,7 +136,8 @@
     "median-house-value ($, no mortgage)":159400,
     "median-house-value ($)":159400,
     "population":12516453,
-    "poverty-population":1539033
+    "poverty-population":1539033,
+    "pce":32138
   },
   {
     "state":"Indiana",
@@ -132,7 +146,8 @@
     "median-house-value ($, no mortgage)":101100,
     "median-house-value ($)":101100,
     "population":6125557,
-    "poverty-population":777712
+    "poverty-population":777712,
+    "pce":28565
   },
   {
     "state":"Iowa",
@@ -141,7 +156,8 @@
     "median-house-value ($, no mortgage)":95900,
     "median-house-value ($)":95900,
     "population":2878398,
-    "poverty-population":316122
+    "poverty-population":316122,
+    "pce":28604
   },
   {
     "state":"Kansas",
@@ -150,7 +166,8 @@
     "median-house-value ($, no mortgage)":86800,
     "median-house-value ($)":86800,
     "population":2679951,
-    "poverty-population":330976
+    "poverty-population":330976,
+    "pce":28416
   },
   {
     "state":"Kentucky",
@@ -159,7 +176,8 @@
     "median-house-value ($, no mortgage)":87400,
     "median-house-value ($)":87400,
     "population":4087474,
-    "poverty-population":693479
+    "poverty-population":693479,
+    "pce":26415
   },
   {
     "state":"Louisiana",
@@ -168,7 +186,8 @@
     "median-house-value ($, no mortgage)":87700,
     "median-house-value ($)":87700,
     "population":4165324,
-    "poverty-population":793223
+    "poverty-population":793223,
+    "pce":27065
   },
   {
     "state":"Maine",
@@ -177,7 +196,8 @@
     "median-house-value ($, no mortgage)":147600,
     "median-house-value ($)":147600,
     "population":1285599,
-    "poverty-population":165956
+    "poverty-population":165956,
+    "pce":33659
   },
   {
     "state":"Maryland",
@@ -186,7 +206,8 @@
     "median-house-value ($, no mortgage)":255000,
     "median-house-value ($)":255000,
     "population":5475889,
-    "poverty-population":428345
+    "poverty-population":428345,
+    "pce":35228
   },
   {
     "state":"Massachusetts",
@@ -195,7 +216,8 @@
     "median-house-value ($, no mortgage)":347900,
     "median-house-value ($)":347900,
     "population":6235586,
-    "poverty-population":620188
+    "poverty-population":620188,
+    "pce":40316
   },
   {
     "state":"Michigan",
@@ -204,7 +226,8 @@
     "median-house-value ($, no mortgage)":130800,
     "median-house-value ($)":130800,
     "population":9852543,
-    "poverty-population":1331833
+    "poverty-population":1331833,
+    "pce":29850
   },
   {
     "state":"Minnesota",
@@ -213,7 +236,8 @@
     "median-house-value ($, no mortgage)":173800,
     "median-house-value ($)":173800,
     "population":5036852,
-    "poverty-population":491633
+    "poverty-population":491633,
+    "pce":34247
   },
   {
     "state":"Mississippi",
@@ -222,7 +246,8 @@
     "median-house-value ($, no mortgage)":76400,
     "median-house-value ($)":76400,
     "population":2815425,
-    "poverty-population":592743
+    "poverty-population":592743,
+    "pce":24187
   },
   {
     "state":"Missouri",
@@ -231,7 +256,8 @@
     "median-house-value ($, no mortgage)":110500,
     "median-house-value ($)":110500,
     "population":5674490,
-    "poverty-population":769584
+    "poverty-population":769584,
+    "pce":29233
   },
   {
     "state":"Montana",
@@ -240,7 +266,8 @@
     "median-house-value ($, no mortgage)":129800,
     "median-house-value ($)":129800,
     "population":921449,
-    "poverty-population":125655
+    "poverty-population":125655,
+    "pce":30367
   },
   {
     "state":"Nebraska",
@@ -249,7 +276,8 @@
     "median-house-value ($, no mortgage)":95400,
     "median-house-value ($)":95400,
     "population":1715413,
-    "poverty-population":197037
+    "poverty-population":197037,
+    "pce":29910
   },
   {
     "state":"Nevada",
@@ -258,7 +286,8 @@
     "median-house-value ($, no mortgage)":244800,
     "median-house-value ($)":244800,
     "population":2460755,
-    "poverty-population":253713
+    "poverty-population":253713,
+    "pce":31064
   },
   {
     "state":"New Hampshire",
@@ -267,7 +296,8 @@
     "median-house-value ($, no mortgage)":220000,
     "median-house-value ($)":220000,
     "population":1276753,
-    "poverty-population":102404
+    "poverty-population":102404,
+    "pce":38218
   },
   {
     "state":"New Jersey",
@@ -276,7 +306,8 @@
     "median-house-value ($, no mortgage)":327800,
     "median-house-value ($)":327800,
     "population":8540402,
-    "poverty-population":741873
+    "poverty-population":741873,
+    "pce":39175
   },
   {
     "state":"New Mexico",
@@ -285,7 +316,8 @@
     "median-house-value ($, no mortgage)":107600,
     "median-house-value ($)":107600,
     "population":1912288,
-    "poverty-population":353694
+    "poverty-population":353694,
+    "pce":27707
   },
   {
     "state":"New York",
@@ -294,7 +326,8 @@
     "median-house-value ($, no mortgage)":226300,
     "median-house-value ($)":226300,
     "population":18770190,
-    "poverty-population":2662199
+    "poverty-population":2662199,
+    "pce":34759
   },
   {
     "state":"North Carolina",
@@ -303,7 +336,8 @@
     "median-house-value ($, no mortgage)":112400,
     "median-house-value ($)":112400,
     "population":8591303,
-    "poverty-population":1261078
+    "poverty-population":1261078,
+    "pce":26661
   },
   {
     "state":"North Dakota",
@@ -312,7 +346,8 @@
     "median-house-value ($, no mortgage)":78600,
     "median-house-value ($)":78600,
     "population":605883,
-    "poverty-population":69356
+    "poverty-population":69356,
+    "pce":30914
   },
   {
     "state":"Ohio",
@@ -321,7 +356,8 @@
     "median-house-value ($, no mortgage)":117400,
     "median-house-value ($)":117400,
     "population":11156019,
-    "poverty-population":1486363
+    "poverty-population":1486363,
+    "pce":29264
   },
   {
     "state":"Oklahoma",
@@ -330,7 +366,8 @@
     "median-house-value ($, no mortgage)":80700,
     "median-house-value ($)":80700,
     "population":3461976,
-    "poverty-population":587591
+    "poverty-population":587591,
+    "pce":25699
   },
   {
     "state":"Oregon",
@@ -339,7 +376,8 @@
     "median-house-value ($, no mortgage)":205300,
     "median-house-value ($)":205300,
     "population":3626910,
-    "poverty-population":480613
+    "poverty-population":480613,
+    "pce":31403
   },
   {
     "state":"Pennsylvania",
@@ -348,7 +386,8 @@
     "median-house-value ($, no mortgage)":114600,
     "median-house-value ($)":114600,
     "population":12015358,
-    "poverty-population":1448228
+    "poverty-population":1448228,
+    "pce":31539
   },
   {
     "state":"Rhode Island",
@@ -357,7 +396,8 @@
     "median-house-value ($, no mortgage)":262000,
     "median-house-value ($)":262000,
     "population":1026114,
-    "poverty-population":114066
+    "poverty-population":114066,
+    "pce":33462
   },
   {
     "state":"South Carolina",
@@ -366,7 +406,8 @@
     "median-house-value ($, no mortgage)":97500,
     "median-house-value ($)":97500,
     "population":4182874,
-    "poverty-population":656154
+    "poverty-population":656154,
+    "pce":26907
   },
   {
     "state":"South Dakota",
@@ -375,7 +416,8 @@
     "median-house-value ($, no mortgage)":89200,
     "median-house-value ($)":89200,
     "population":753221,
-    "poverty-population":102184
+    "poverty-population":102184,
+    "pce":29706
   },
   {
     "state":"Tennessee",
@@ -384,7 +426,8 @@
     "median-house-value ($, no mortgage)":106300,
     "median-house-value ($)":106300,
     "population":5877686,
-    "poverty-population":952256
+    "poverty-population":952256,
+    "pce":27355
   },
   {
     "state":"Texas",
@@ -393,7 +436,8 @@
     "median-house-value ($, no mortgage)":85900,
     "median-house-value ($)":85900,
     "population":22887307,
-    "poverty-population":3868689
+    "poverty-population":3868689,
+    "pce":28379
   },
   {
     "state":"Utah",
@@ -402,7 +446,8 @@
     "median-house-value ($, no mortgage)":177200,
     "median-house-value ($)":177200,
     "population":2508619,
-    "poverty-population":265432
+    "poverty-population":265432,
+    "pce":28115
   },
   {
     "state":"Vermont",
@@ -411,7 +456,8 @@
     "median-house-value ($, no mortgage)":171000,
     "median-house-value ($)":171000,
     "population":603568,
-    "poverty-population":62281
+    "poverty-population":62281,
+    "pce":35638
   },
   {
     "state":"Virginia",
@@ -420,7 +466,8 @@
     "median-house-value ($, no mortgage)":161000,
     "median-house-value ($)":161000,
     "population":7404188,
-    "poverty-population":708568
+    "poverty-population":708568,
+    "pce":33070
   },
   {
     "state":"Washington",
@@ -429,7 +476,8 @@
     "median-house-value ($, no mortgage)":224200,
     "median-house-value ($)":224200,
     "population":6261127,
-    "poverty-population":736963
+    "poverty-population":736963,
+    "pce":33495
   },
   {
     "state":"West Virginia",
@@ -438,7 +486,8 @@
     "median-house-value ($, no mortgage)":78100,
     "median-house-value ($)":78100,
     "population":1770974,
-    "poverty-population":307020
+    "poverty-population":307020,
+    "pce":25417
   },
   {
     "state":"Wisconsin",
@@ -447,7 +496,8 @@
     "median-house-value ($, no mortgage)":146500,
     "median-house-value ($)":146500,
     "population":5401346,
-    "poverty-population":591850
+    "poverty-population":591850,
+    "pce":30772
   },
   {
     "state":"Wyoming",
@@ -456,6 +506,7 @@
     "median-house-value ($, no mortgage)":130300,
     "median-house-value ($)":130300,
     "population":499930,
-    "poverty-population":46774
+    "poverty-population":46774,
+    "pce":32651
   }
 ]
