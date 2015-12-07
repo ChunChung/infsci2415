@@ -8,34 +8,41 @@
 /* style appied to all pages */
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+div {
+	/*border: 1px solid red;*/
+	/*margin-top: 10px;*/
 }
 
 .container {
-	margin: 10px 10px 0px 10px;
+	
 	border: 2px solid darkgrey;
 	border-radius: 10px;
 }
 
 .block {
-	
-	margin-bottom: 20px;
+	margin-top: 10px;
 }
 
 .title {
-	margin: 10px 0px 50px 0px;
+	margin: 20px 0px 0px 0px;
 	text-align: center;
 	font-size: 2em;
+	font-weight: bold;
 }
 
 .subtitle {
-	margin: 10px 0px 10px 0px;
+	margin: 20px 0px 0px 0px;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
 	
 }
 
 .author {
-	margin: 10px 0px 10px 0px;
+	/*margin: 10px 0px 10px 0px;*/
 	text-align: center;
 	font-size: 1em;
 	font-style: italic;
@@ -48,6 +55,8 @@ body {
 
 
 
+
+
 /* opening.html */
 table.center {
 	margin-left:0%; 
@@ -55,6 +64,7 @@ table.center {
 	margin-top:0%;
 	width: 50%
 }
+
 
 /* parallelCoordinates.html */
 
