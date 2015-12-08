@@ -21,6 +21,9 @@ d3.parcoords = function(config) {
   };
 
   extend(__, config);
+
+
+
 var pc = function(selection) {
   selection = pc.selection = d3.select(selection);
 
@@ -642,6 +645,12 @@ function brushPredicate(predicate) {
   pc.render();
   return pc;
 }
+
+pc.brushUp = function(newSelection) {
+  __.brushed = newSelection;
+  events.brush.call(pc,__.brushed);
+  pc.render();
+};
 
 pc.brushModes = function() {
   return Object.getOwnPropertyNames(brush.modes);
